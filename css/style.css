@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600");
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: beige;
+}
+
+.container {
+  z-index: 10;
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  height: 250px;
+  transform: translateX(-50%) translateY(-50%);
+  font-family: "Montserrat";
+  text-align: center;
+  width: 100%;
+}
+.container div{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-weight: 200;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  color: rgb(0, 0, 0);
+  letter-spacing: 2px;
+}
+a:visited {
+  color: null;
+}
+.registration_button {
+  background-color: #111111; 
+  border: 2px solid #ffffff; /* Green */
+  color: #ffffff;
+  
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 800;
+
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.registration_button:hover {
+  background-color: #ffffff; /* Green */
+  color: #000000;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
