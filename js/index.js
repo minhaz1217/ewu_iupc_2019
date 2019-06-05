@@ -1,31 +1,6 @@
 let particles = [];
-let frequency = 5;
+let frequency = 50;
 let c1,c2,c3,tela, canvas;
-// Popolate particles
-window.onload= function(){
-
-  setInterval(
-    function () {
-      popolate();
-    }.bind(this),
-    frequency);
-      
-    c1 = createCanvas({ width: $(window).width(), height: $(window).height() });
-    c2 = createCanvas({ width: $(window).width(), height: $(window).height() });
-    c3 = createCanvas({ width: $(window).width(), height: $(window).height() });
-    // $("body").append(tela);
-
-    tela = c1.canvas;
-    canvas = c1.context;
-
-    $("#graphics").append(c3.canvas);
-    writeText(c2.canvas, c2.context, "EAST WEST UNIVERSITY\n IUPC\n2019");
-    popolate();
-    update();
-    console.log("OK");
-
-}
-
 
 // let c1 = createCanvas({ width: $(window).width(), height: $(window).height() });
 // let c2 = createCanvas({ width: $(window).width(), height: $(window).height() });
@@ -130,6 +105,7 @@ function blur(ctx, canvas, amt) {
    * @num:number number of particles
    */
 function popolate() {
+  // console.log("SUCCESS");
   particles.push(
   new Particle(canvas, {
     x: $(window).width() / 2,
@@ -148,7 +124,7 @@ function popolate() {
     y: $(window).height() / 10 }
     )
   );
-  console.log($(window).height());
+  // console.log($(window).height());
   return particles.length;
 }
 
@@ -156,7 +132,7 @@ function popolate() {
 function clear() {
   canvas.globalAlpha = .03;
   canvas.fillStyle = '#ffffff';
-  //canvas.fillRect(0, 0, tela.width, tela.height);
+  canvas.fillRect(0, 0, tela.width, tela.height);
   canvas.globalAlpha = 1;
 }
 
@@ -167,4 +143,32 @@ function update() {
   });
   maskCanvas();
   requestAnimationFrame(update.bind(this));
+}
+
+
+// Popolate particles
+c1 = createCanvas({ width: $(window).width(), height: $(window).height() });
+c2 = createCanvas({ width: $(window).width(), height: $(window).height() });
+c3 = createCanvas({ width: $(window).width(), height: $(window).height() });
+window.onload= function(){
+
+  // $("body").append(tela);
+
+    tela = c1.canvas;
+    canvas = c1.context;
+    $("#graphics").append(c3.canvas);
+    writeText(c2.canvas, c2.context, "EAST WEST UNIVERSITY\n IUPC\n2019");
+    
+    setInterval(
+      function () {
+        popolate();
+      }.bind(this),
+      frequency);
+    update();
+    
+        
+    console.log(c1.context);
+    console.log(c2.context);
+    console.log(c3.context);
+
 }
