@@ -1,12 +1,21 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600");
-
+@import url('https://fonts.googleapis.com/css?family=Merriweather:700i&display=swap');
+:root{
+  --mainBackgroundColor: var(--darkColor);
+  --lightColor : #F2F2F2;
+  --darkColor : #191F26;
+  /* 
+  
+  F2F2F2
+  
+  */
+}
 body {
   margin: 0;
   padding: 0;
   overflow: hidden;
   width: 100%;
   height: 100%;
-  background: #111111;
+  background: var(--mainBackgroundColor);
 }
 
 .container {
@@ -57,3 +66,118 @@ a:visited {
   color: #000000;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
+/* SLIDER */
+
+input[type='checkbox'].switch-control {
+  margin-left: -9999px;
+  position: absolute;
+}
+input[type='checkbox'].switch-control ~ label {
+  float: left;
+  width: 100%;
+  position: relative;
+  line-height: 1.75rem;
+  margin: 0.2rem 0;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: left;
+}
+input[type='checkbox'].switch-control ~ label:before,
+input[type='checkbox'].switch-control ~ label:after {
+  right: 0;
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  content: ' ';
+  width: 4rem;
+  background-color: #2C3540;
+  border-radius: 3px;
+  transition: all 100ms ease-in;
+  background-size: 20px 9px;
+}
+input[type='checkbox'].switch-control ~ label:before {
+  border: 5px solid #CFD4D8;
+  content: 'LIGHT';
+  text-align: left;
+  text-indent: 2.2rem;
+  line-height: 2;
+  color: #F2F2F2;
+  font-size: 0.5rem;
+  font-weight: 900;
+}
+input[type='checkbox'].switch-control ~ label:after {
+  right: 2.4rem;
+  width: 1.9rem;
+  top: 0.2rem;
+  bottom: 0.25rem;
+  margin-left: 0.3rem;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 0.1rem 0 rgba(0, 0, 0, 0.3);
+  border: 1px solid #A7A9AC;
+  content: '';
+  color: #5F6062;
+  font-weight: 900;
+  line-height: 0.7;
+  text-align: center;
+  font-size: 0.95rem;
+}
+input[type='checkbox'].switch-control:checked ~ label:before {
+  background-color: #F2F2F2;
+  content: 'DARK';
+  color: #2C3540;
+  text-indent: 0.5rem;
+  text-align: left;
+}
+input[type='checkbox'].switch-control:checked ~ label:after {
+  right: 0.2rem;
+}
+/* SLIDER END */
+
+/* PARALLEX */
+
+#particles-js, #parallax, .layer, .some-space, .some-more-space {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+#particles-js {
+  opacity: 0.6;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotateZ(0deg) translate3d(0, 1.5%, 0) rotateZ(0deg);
+            transform: rotateZ(0deg) translate3d(0, 1.5%, 0) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) translate3d(0, 1.5%, 0) rotateZ(-360deg);
+            transform: rotateZ(360deg) translate3d(0, 1.5%, 0) rotateZ(-360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotateZ(0deg) translate3d(0, 1.5%, 0) rotateZ(0deg);
+            transform: rotateZ(0deg) translate3d(0, 1.5%, 0) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) translate3d(0, 1.5%, 0) rotateZ(-360deg);
+            transform: rotateZ(360deg) translate3d(0, 1.5%, 0) rotateZ(-360deg);
+  }
+}
+
+.some-space {
+  animation: rotate 18s 0.5s infinite linear reverse;
+}
+
+.some-more-space {
+  -webkit-animation: rotate 15s 0.1s infinite linear;
+          animation: rotate 15s 0.1s infinite linear;
+}
+/* PARALLEX END */

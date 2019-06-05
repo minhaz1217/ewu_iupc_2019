@@ -1,23 +1,39 @@
 let particles = [];
 let frequency = 5;
+let c1,c2,c3,tela, canvas;
 // Popolate particles
-setInterval(
-function () {
-  popolate();
-}.bind(this),
-frequency);
+window.onload= function(){
+
+  setInterval(
+    function () {
+      popolate();
+    }.bind(this),
+    frequency);
+      
+    c1 = createCanvas({ width: $(window).width(), height: $(window).height() });
+    c2 = createCanvas({ width: $(window).width(), height: $(window).height() });
+    c3 = createCanvas({ width: $(window).width(), height: $(window).height() });
+    // $("body").append(tela);
+
+    tela = c1.canvas;
+    canvas = c1.context;
+
+    $("#graphics").append(c3.canvas);
+    writeText(c2.canvas, c2.context, "EAST WEST UNIVERSITY\n IUPC\n2019");
+    popolate();
+    update();
+    console.log("OK");
+
+}
 
 
-let c1 = createCanvas({ width: $(window).width(), height: $(window).height() });
-let c2 = createCanvas({ width: $(window).width(), height: $(window).height() });
-let c3 = createCanvas({ width: $(window).width(), height: $(window).height() });
+// let c1 = createCanvas({ width: $(window).width(), height: $(window).height() });
+// let c2 = createCanvas({ width: $(window).width(), height: $(window).height() });
+// let c3 = createCanvas({ width: $(window).width(), height: $(window).height() });
 
-let tela = c1.canvas;
-let canvas = c1.context;
+// let tela = c1.canvas;
+// let canvas = c1.context;
 
-// $("body").append(tela);
-$("body").append(c3.canvas);
-writeText(c2.canvas, c2.context, "EAST WEST UNIVERSITY\n IUPC\n2019");
 
 
 class Particle {
@@ -85,10 +101,10 @@ function createCanvas(properties) {
 
 function writeText(canvas, context, text) {
   let size = 100;
-  context.font = size + "px Montserrat";
-  context.fillStyle = "#111111";
+  context.font = size + "px Merriweather";
+  context.fillStyle = "#111111"; // fill style doesn't matter it is replaced later
   context.textAlign = "center";
-  let lineheight = 70;
+  let lineheight = 80;
   let lines = text.split('\n');
   for (let i = 0; i < lines.length; i++) {
     context.fillText(lines[i], canvas.width / 2, canvas.height / 2 + lineheight * i - lineheight * (lines.length - 1) / 3);
@@ -138,9 +154,9 @@ function popolate() {
 
 
 function clear() {
-  canvas.globalAlpha = 0.03;
-  canvas.fillStyle = '#111111';
-  canvas.fillRect(0, 0, tela.width, tela.height);
+  canvas.globalAlpha = .03;
+  canvas.fillStyle = '#ffffff';
+  //canvas.fillRect(0, 0, tela.width, tela.height);
   canvas.globalAlpha = 1;
 }
 
@@ -152,5 +168,3 @@ function update() {
   maskCanvas();
   requestAnimationFrame(update.bind(this));
 }
-
-update();

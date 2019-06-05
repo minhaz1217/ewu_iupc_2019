@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+<style>
+
+        input[type='checkbox'].switch-control {
+          margin-left: -9999px;
+          position: absolute;
+        }
+        input[type='checkbox'].switch-control ~ label {
+          float: left;
+          width: 100%;
+          position: relative;
+          line-height: 1.75rem;
+          margin: 0.2rem 0;
+          cursor: pointer;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          text-align: left;
+        }
+        input[type='checkbox'].switch-control ~ label:before,
+        input[type='checkbox'].switch-control ~ label:after {
+          right: 0;
+          position: absolute;
+          display: block;
+          top: 0;
+          bottom: 0;
+          content: ' ';
+          width: 4rem;
+          background-color: #2C3540;
+          border-radius: 3px;
+          transition: all 100ms ease-in;
+          background-size: 20px 9px;
+        }
+        input[type='checkbox'].switch-control ~ label:before {
+          border: 5px solid #CFD4D8;
+          content: 'LIGHT';
+          text-align: left;
+          text-indent: 2.2rem;
+          line-height: 2;
+          color: #F2F2F2;
+          font-size: 0.5rem;
+          font-weight: 900;
+        }
+        input[type='checkbox'].switch-control ~ label:after {
+          right: 2.4rem;
+          width: 1.9rem;
+          top: 0.2rem;
+          bottom: 0.25rem;
+          margin-left: 0.3rem;
+          background-color: #fff;
+          border-radius: 2px;
+          box-shadow: 0 0.1rem 0 rgba(0, 0, 0, 0.3);
+          border: 1px solid #A7A9AC;
+          content: '';
+          color: #5F6062;
+          font-weight: 900;
+          line-height: 0.7;
+          text-align: center;
+          font-size: 0.95rem;
+        }
+        input[type='checkbox'].switch-control:checked ~ label:before {
+          background-color: #F2F2F2;
+          content: 'DARK';
+          color: #2C3540;
+          text-indent: 0.5rem;
+          text-align: left;
+        }
+        input[type='checkbox'].switch-control:checked ~ label:after {
+          right: 0.2rem;
+        }
+        
+        </style>
+<input type="checkbox" id="switch" class="switch-control" onclick="changeTheme()">
+<label for="switch">&nbsp;</label>
+<script>
+function changeTheme(){
+}
+</script>
+</body>
+</html>

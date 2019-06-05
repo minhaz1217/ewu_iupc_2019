@@ -5,22 +5,51 @@
   <meta charset="UTF-8">
   <title>East West University IUPC 2019</title>
   <link rel="stylesheet" href="css/style.css">
-
-  
 </head>
-
 <body>
 
-  <div class="container">
-    <div>
-        <h2>Star: 31-July-2019</h2>
-        <a href="#" class="registration_button">Registration Coming Soon</a>
+<div id="parallax">
+
+    <div class="layer" data-depth="0.3">
+      <div id="graphics">
+      </div>
     </div>
-  </div>
+    <div class="layer" data-depth="0.4">
+      <div id="particles-js"></div>
+    </div>
+    <div class="layer" data-depth="0.9">
+      <div class="container">
+        <div>
+            <input type="checkbox" id="switch" class="switch-control">
+            <h2>Star: 31-July-2019</h2>
+            <a href="#" class="registration_button">Registration Coming Soon</a>
+        </div>
+      </div>
+  </div>  
+
+
+</div>
+
+<!-- <input type="checkbox" id="switch" class="switch-control" onclick="changeTheme()" checked>
+<label for="switch">&nbsp;</label> -->
   <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js'></script>
+  <script src='https://matthew.wagerfield.com/parallax/deploy/jquery.parallax.js'></script>
+  <script  src="js/parallex.js"></script>
   <script  src="js/index.js"></script>
 
 
+  <script>
+      // changeTheme();
+      function changeTheme(){
+        // console.log(document.documentElement.style.getPropertyValue('--mainBackgroundColor'));
+        if(document.documentElement.style.getPropertyValue('--mainBackgroundColor') == "#F2F2F2"){
+          document.documentElement.style.setProperty('--mainBackgroundColor', "#191F26");
+        }else{
+          document.documentElement.style.setProperty('--mainBackgroundColor', "#F2F2F2");
+        }
+      }
+    </script>
 
 
 </body>
