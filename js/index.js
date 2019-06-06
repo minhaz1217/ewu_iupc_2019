@@ -105,7 +105,6 @@ function blur(ctx, canvas, amt) {
    * @num:number number of particles
    */
 function popolate() {
-  // console.log("SUCCESS");
   particles.push(
   new Particle(canvas, {
     x: $(window).width() / 2,
@@ -144,31 +143,28 @@ function update() {
   maskCanvas();
   requestAnimationFrame(update.bind(this));
 }
-
-
+function init(){
+  c1 = createCanvas({ width: $(window).width(), height: $(window).height() });
+  c2 = createCanvas({ width: $(window).width(), height: $(window).height() });
+  c3 = createCanvas({ width: $(window).width(), height: $(window).height() });
+  
+  tela = c1.canvas;
+  canvas = c1.context;
+  $("#graphics").append(c3.canvas);
+  writeText(c2.canvas, c2.context, "EAST WEST UNIVERSITY\n IUPC\n2019");
+  console.log(window)
+  setInterval(
+    function () {
+      popolate();
+    }.bind(this),
+    frequency);
+  console.log("INITIATED");
+  update();
+}
+$('body').ready(init());
+// $(window).bind("load", init());
 // Popolate particles
-c1 = createCanvas({ width: $(window).width(), height: $(window).height() });
-c2 = createCanvas({ width: $(window).width(), height: $(window).height() });
-c3 = createCanvas({ width: $(window).width(), height: $(window).height() });
-window.onload= function(){
+document.onload= function(){
 
-  // $("body").append(tela);
-
-    tela = c1.canvas;
-    canvas = c1.context;
-    $("#graphics").append(c3.canvas);
-    writeText(c2.canvas, c2.context, "EAST WEST UNIVERSITY\n IUPC\n2019");
-    
-    setInterval(
-      function () {
-        popolate();
-      }.bind(this),
-      frequency);
-    update();
-    
-        
-    console.log(c1.context);
-    console.log(c2.context);
-    console.log(c3.context);
 
 }
