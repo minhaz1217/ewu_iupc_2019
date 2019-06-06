@@ -1,3 +1,1 @@
-A Pen created at CodePen.io. You can find this one at https://codepen.io/minhaz1217/pen/GaPEoo.
-
- 
+- A site created for EAST WEST UNIVERSITY's 2019 INTER UNIVERSITY PROGRAMMING CONTEST
