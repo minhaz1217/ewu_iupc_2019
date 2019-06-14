@@ -223,9 +223,33 @@ input[type='checkbox'].switch-control:checked~label:after {
 
 /* PARALLEX END */
 
+/* for navigation bar */
 
-@media only screen and (max-width: 600px) {
-  .decleare {
-    /* font-size:1.2em; */
-  }
+ul.navigation {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
 }
+
+ul.navigation li {
+  float: right;
+}
+
+ul.navigation li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.navigation li a:hover {
+  background-color: #111;
+}
+ul.navigation li:nth-of-type(1) a:hover {
+  background-color: transparent;
+}
+
+/* nav bar end */
